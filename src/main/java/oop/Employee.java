@@ -3,11 +3,14 @@ package oop;
 public class Employee
 {
 	//hermetyzacja
+
+	//prywatne skladowe sa widoczne tylko w odrebie klasy w ktorej sa zdefiniowane
 	private int id;
 	private String name;
 	private String lastname;
 
 	//wartosc ponizszej skladowej bedzie mozna zmieniac
+	//przyklad agregacji czyli zawierania obiektu w obiekcie
 	private String address;
 
 	//konstruktor definiuje sposob robienia instancji (obiektu) klasy

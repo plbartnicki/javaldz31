@@ -3,6 +3,8 @@ package oop;
 import java.util.HashSet;
 import java.util.Set;
 
+
+//A extends B and B extends C => A dziedziczy po C
 public class Main
 {
 
@@ -73,23 +75,37 @@ public class Main
 	{
 		//robimy obiekt punktu za pomoca konstruktora domyslnego
 		Point2d p1 = new Point2d( );
-		System.out.println( "(" +  p1.getX() + ", " + p1.getY() + ")");
+		System.out.println( "(" + p1.getX( ) + ", " + p1.getY( ) + ")" );
 
 		//zrob punkt o wspolrzednych (-0.02, 2.34) i wyswietl obie wspolrzedne
-		Point2d p2 = new Point2d(-0.02, 2.34 );
-		System.out.println( "(" +  p2.getX() + ", " + p2.getY() + ")");
+		Point2d p2 = new Point2d( -0.02, 2.34, Color.BLUE );
+		System.out.println( "(" + p2.getX( ) + ", " + p2.getY( ) + ")" );
 
-		Point2d p3 = new Point2d(3, 4);
+		Point2d p3 = new Point2d( 3, 4, Color.GREEN );
 
 		//odleglosc pomiedzy p3 i p1
-		double dist = p1.distance(p3);
+		double dist = p1.distance2d( p3 );
 
-		System.out.println(dist);
+		System.out.println( dist );
+
+		System.out.println( p1 );  // to jest rownowazne System.out.println( p1.toString() );
+	}
+
+	private static void demoPoint3d( )
+	{
+		Point3d p1 = new Point3d( -0.02, 2.34, 1, Color.BLUE );
+		Point3d p2 = new Point3d( -0.02, 2.34, 1, Color.RED );
+//		Point2d p3 = new Point2d( -0.02, 2.34);
+
+		System.out.println( p1 );
+		System.out.println( p1.distance3d( p2 ) );
 	}
 
 	public static void main( String[] args )
 	{
 		//demoEmployees( );
-		demoPoint2d();
+		//demoPoint2d( );
+		demoPoint3d();
+
 	}
 }
