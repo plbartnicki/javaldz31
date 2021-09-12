@@ -3,10 +3,37 @@ package oop;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 //A extends B and B extends C => A dziedziczy po C
 public class Main
 {
+
+	//static oznacza ze nie musze robic obiektu tej klasy (Main) zeby wywolac ta funkcji
+	public static int maxOddNumber(int []values)
+	{
+		int maxOdd = -1;   //kandydat na maksymalna wartosc nieparzysta (-1 oznacza ze jeszcze nie znaleziono zadnego elementu nieparzystego)
+		int maxEven = -1; // ...wartosc parzysta...
+
+		for(int i = 0; i < values.length; i++)
+		{
+			if(values[i] % 2 == 1 && values[i] > maxOdd)  //jesli i-ta (kolejna) wartosc komorki tablicy
+			{
+				maxOdd = values[i];
+			}
+			else if(values[i] % 2 == 0 && values[i] > maxEven)
+			{
+				maxEven = values[i];
+			}
+		}
+
+		if(maxOdd != -1)
+		{
+			return maxOdd;
+		}
+
+		return maxEven;
+	}
 
 	private static boolean checkPairs( double[] values )
 	{
@@ -101,11 +128,36 @@ public class Main
 		System.out.println( p1.distance3d( p2 ) );
 	}
 
+	public static void testMaxOddNumber()
+	{
+		int test1[] = {2,1,4,7,6};
+		int result1 = Main.maxOddNumber(test1 );
+		System.out.println( result1 );
+
+		int test2[] = {};
+		int result2 = Main.maxOddNumber(test2 );
+		System.out.println( result2 );
+
+		int test3[] = {2,8,4,10,6};
+		int result3 = Main.maxOddNumber(test3 );
+		System.out.println( result3 );
+	}
+
+	private static void carsTest()
+	{
+		Truck tr1 = new Truck( "Vovlo", 1221, Car.GearType.AUTO, 1000 );
+		System.out.println(tr1);
+	}
+
 	public static void main( String[] args )
 	{
 		//demoEmployees( );
-		//demoPoint2d( );
-		demoPoint3d();
+//		//demoPoint2d( );
+//		demoPoint3d();
+
+//		testMaxOddNumber();
+
+		carsTest();
 
 	}
 }
