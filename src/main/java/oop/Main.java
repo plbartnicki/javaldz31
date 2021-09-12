@@ -3,7 +3,6 @@ package oop;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 //A extends B and B extends C => A dziedziczy po C
 public class Main
@@ -145,14 +144,28 @@ public class Main
 
 	private static void carsTest()
 	{
-		Truck tr1 = new Truck( "Vovlo", 1221, Car.GearType.AUTO, 1000 );
+		Truck tr1 = new Truck( "Vovlo", 99999.99, 1221, Car.GearType.AUTO, 5, 1000 );
 		System.out.println(tr1);
 
-		Car car1 = new Car("Vovlo", 1221, Car.GearType.AUTO);
-		Object car2 = new Car("Toyota", 1221, Car.GearType.AUTO);
+		Car car1 = new Car("Vovlo",  20000.0, 1221, Car.GearType.AUTO, 5);
+		Object car2 = new Car("Toyota",  999.9, 1221, Car.GearType.AUTO, 5);
 
-		System.out.println( car1 );
+		printVehicleInfo(car1);   //moge przekazac metodzie printVehicleInfo Car bo Car jest typu Vehicle
+		//printVehicleInfo(car2);  //nie mozna przekazac metodzie printVehicleInfo Object bo ta metoda oczekuje Vehicle (niezgodnosc typow)
 
+		Vehicle tr2 = new Truck( "Vovlo", 99999.99, 222, Car.GearType.AUTO, 5, 1000 );
+
+		printVehicleInfo(tr2);
+
+		//niei mozna zrobic obiektu klasy abstrakcyjnej
+//		Vehicle v = new Vehicle("xyz", 999.9);
+
+	}
+
+	private static void printVehicleInfo(Vehicle veh) {
+		//polimorfizm - zostaje automatycznie wywolana wlasciwa implementacja metody toString()
+		System.out.println( veh.toString() );
+		//....
 	}
 
 	public static void main( String[] args )

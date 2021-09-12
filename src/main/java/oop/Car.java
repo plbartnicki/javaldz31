@@ -1,52 +1,50 @@
 package oop;
 
-public class Car
+public class Car extends Vehicle
 {
-	protected String brand;
-	protected int power;
-	protected GearType grType;
+	protected int numOfPass;
+	protected GearType gearType;
+	protected  int power;
 
+	//enum jest definicja wlasnego typu
 	public enum GearType {MANUAL, AUTO}
 
-	public Car( String brand, int power, GearType grType )
+	public Car( String brand, Double price, int power, GearType grType, int numOfPass )
 	{
-		this.brand = brand;
-		this.power = power;
-		this.grType = grType;
-	}
-
-	public String getBrand( )
-	{
-		return brand;
-	}
-
-	public int getPower( )
-	{
-		return power;
-	}
-
-	public void setPower( int power )
-	{
+		super(brand, price);
+		this.numOfPass = numOfPass;
+		this.gearType = grType;
 		this.power = power;
 	}
 
-	public GearType getGrType( )
+	public int getNumOfPass( )
 	{
-		return grType;
+		return numOfPass;
 	}
 
-	public void setGrType( GearType grType )
+	public void setNumOfPass( int numOfPass )
 	{
-		this.grType = grType;
+		this.numOfPass = numOfPass;
 	}
 
-	@Override
-	public String toString( )
+	public GearType getGearType( )
+	{
+		return gearType;
+	}
+
+	public void setGearType( GearType gearType )
+	{
+		this.gearType = gearType;
+	}
+
+	@Override public String toString( )
 	{
 		return "Car{" +
-			"brand='" + brand + '\'' +
+			"numOfPass=" + numOfPass +
+			", gearType=" + gearType +
 			", power=" + power +
-			", grType=" + grType +
+			", brand='" + brand + '\'' +
+			", price=" + price +
 			'}';
 	}
 }
