@@ -3,6 +3,10 @@ package oop;
 /*
 	nie można utworzyć obiektu klasy abstrakcyjnej
 	klasa abstrakcyjna zawiera wspolne skladowe dla wszystkich klas ktore po niej dziedzicz
+
+	kazda klasa abstrakcyjna (podobna do interfejsu) stanowi pewnego rodzaju kontrakt, to znaczy
+	ze na obiekcie kazdej klasy ktora dziedziczy po klasie abstrakcyjnej, mamy pewnosc ze mozna wywolac
+	dowolna metode publiczna (public) z tej klasy abstrakcyjnej
  */
 public abstract class Vehicle
 {
