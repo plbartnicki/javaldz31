@@ -147,6 +147,12 @@ public class Main
 	{
 		Truck tr1 = new Truck( "Vovlo", 1221, Car.GearType.AUTO, 1000 );
 		System.out.println(tr1);
+
+		Car car1 = new Car("Vovlo", 1221, Car.GearType.AUTO);
+		Object car2 = new Car("Toyota", 1221, Car.GearType.AUTO);
+
+		System.out.println( car1 );
+
 	}
 
 	public static void main( String[] args )

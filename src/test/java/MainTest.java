@@ -1,4 +1,3 @@
-package java;
 
 import oop.Main;
 import org.junit.jupiter.api.Test;
