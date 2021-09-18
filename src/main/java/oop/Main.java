@@ -4,11 +4,12 @@ import oop.employee.Employee;
 import oop.point.Color;
 import oop.point.Point2d;
 import oop.point.Point3d;
+import oop.shapes.Oval;
+import oop.shapes.Shape;
+import oop.shapes.Triangle;
 import oop.vehicles.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import java.util.*;
 
 //A extends B and B extends C => A dziedziczy po C
 public class Main
@@ -189,9 +190,34 @@ public class Main
 		//....
 	}
 
-	private void testShapes()
+	private static void testShapes()
 	{
+		//b i c  wzorujac sie na VehicleManager.drawAllVehicles (oraz liniach 14 i 20 w  VehicleManager)
+		ArrayList<Shape> shapes = new ArrayList<>(  );
+		Shape oval1 = new Oval(10.6, 0.123, 10.0);
+		shapes.add( oval1 );
+		Triangle triangle1 = new Triangle(10.6, 0.123, 10.0);
+		shapes.add( triangle1 );
 
+		//mozna tez za jednym zamachem zainicjalizowac liste oraz dodac do niej obiekty
+//		List<Shape> shapes2 = Arrays.asList( new Oval(10.6, 0.123, 10.0),
+//			new Triangle(0.0, 5.3, 20.0) );
+
+		for(Shape shape : shapes)
+		{
+			Double area = shape.computeArea();  //polimorfizm
+			if(shape instanceof Oval)
+			{
+				System.out.println( String.format( "The area of oval = %f .", area ) );
+			}
+			else if(shape instanceof Triangle)
+			{
+				System.out.println( String.format( "The area of triangle = %f .", area ) );
+			}
+
+		}
+
+		//do tej listy mozna dodawac obiekty klas ktore dziedzicza po klasie Shape
 	}
 
 	public static void main( String[] args )
@@ -204,7 +230,9 @@ public class Main
 
 //		carsTest();
 
-		drawingDemo();
+	//	drawingDemo();
+
+		testShapes();
 
 	}
 }
