@@ -12,5 +12,24 @@ public abstract class Shape
 
 	public abstract Double computeArea();
 
-	//TODO: dodaj brakujace elementy
+	public Double getX( )
+	{
+		return x;
+	}
+
+	public void setX( Double x )
+	{
+		this.x = x;
+	}
+
+	public Double getY( )
+	{
+		return y;
+	}
+
+	public void setY( Double y )
+	{
+		this.y = y;
+	}
+
 }

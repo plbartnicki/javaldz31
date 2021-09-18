@@ -189,6 +189,11 @@ public class Main
 		//....
 	}
 
+	private void testShapes()
+	{
+
+	}
+
 	public static void main( String[] args )
 	{
 		//demoEmployees( );
