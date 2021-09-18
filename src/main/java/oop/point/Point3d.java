@@ -1,4 +1,4 @@
-package oop;
+package oop.point;
 
 public class Point3d extends Point2d
 {

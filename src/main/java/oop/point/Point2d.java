@@ -1,4 +1,4 @@
-package oop;
+package oop.point;
 
 public class Point2d //extends Object - kazda klasa domyslnie dziedziczy po klasie Object
 	//dziedziczy, to znaczy ze są "kopiowane" na skutek dziedziczenia wszystkie skladowe (metody, pola (zmienne, obiekty)) ktore nie sa private

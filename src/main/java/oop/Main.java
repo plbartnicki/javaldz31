@@ -1,5 +1,11 @@
 package oop;
 
+import oop.employee.Employee;
+import oop.point.Color;
+import oop.point.Point2d;
+import oop.point.Point3d;
+import oop.vehicles.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -160,6 +166,21 @@ public class Main
 		//niei mozna zrobic obiektu klasy abstrakcyjnej
 //		Vehicle v = new Vehicle("xyz", 999.9);
 
+
+	}
+
+	private static void drawingDemo() {
+		VehicleManager vehicleManager = new VehicleManager();
+
+		Bike bike = new Bike("bk", 999.0, 4, Bike.BikeType.MOUNTAIN);
+		bike.setX( 0.0 );
+		bike.setX( 1.0 );
+		vehicleManager.addVehicle( bike );
+
+		vehicleManager.addVehicle( new Truck( "Vovlo", 99999.99, 222, Car.GearType.AUTO, 5, 1000 ) );
+		vehicleManager.addVehicle( new Car("Vovlo",  20000.0, 1221, Car.GearType.AUTO, 5, 1.5, 2.3) );
+
+		vehicleManager.drawAllVehicles();
 	}
 
 	private static void printVehicleInfo(Vehicle veh) {
@@ -176,7 +197,9 @@ public class Main
 
 //		testMaxOddNumber();
 
-		carsTest();
+//		carsTest();
+
+		drawingDemo();
 
 	}
 }

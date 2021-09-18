@@ -1,4 +1,4 @@
-import oop.*;
+import oop.vehicles.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertNotNull;

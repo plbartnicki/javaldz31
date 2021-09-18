@@ -1,5 +1,7 @@
 
 import oop.*;
+import oop.vehicles.Bike;
+import oop.vehicles.Vehicle;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertNotNull;

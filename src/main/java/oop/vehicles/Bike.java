@@ -1,9 +1,15 @@
-package oop;
+package oop.vehicles;
 
 public class Bike extends Vehicle
 {
 	private int numOfGears;
 	private BikeType bikeType;
+
+	@Override //ta adnotacja to jest tez informacja (w kodzie) ze metoda draw jest dziedziczona
+	public void draw()
+	{
+		System.out.println( "drawing bike .." + x + ", " + y  );
+	}
 
 	public enum BikeType{SPORT, MOUNTAIN, CITY}
 
@@ -33,4 +39,6 @@ public class Bike extends Vehicle
 			", price=" + price +
 			'}';
 	}
+
+
 }

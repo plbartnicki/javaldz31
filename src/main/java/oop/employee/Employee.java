@@ -1,4 +1,4 @@
-package oop;
+package oop.employee;
 
 public class Employee
 {

@@ -1,4 +1,4 @@
-package oop;
+package oop.vehicles;
 
 public class Car extends Vehicle
 {
@@ -12,6 +12,14 @@ public class Car extends Vehicle
 	public Car( String brand, Double price, int power, GearType grType, int numOfPass )
 	{
 		super(brand, price);
+		this.numOfPass = numOfPass;
+		this.gearType = grType;
+		this.power = power;
+	}
+
+	public Car( String brand, Double price, int power, GearType grType, int numOfPass,  Double x, Double y)
+	{
+		super(brand, price, x, y);
 		this.numOfPass = numOfPass;
 		this.gearType = grType;
 		this.power = power;
@@ -47,4 +55,11 @@ public class Car extends Vehicle
 			", price=" + price +
 			'}';
 	}
+
+	@Override //ta adnotacja to jest tez informacja (w kodzie) ze metoda draw jest dziedziczona
+	public void draw( )
+	{
+		System.out.println( "drawing car .. starting with: " + x + ", " + y );
+	}
+
 }

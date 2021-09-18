@@ -1,4 +1,4 @@
-package oop;
+package oop.vehicles;
 
 public class Truck extends Car
 {
@@ -50,4 +50,11 @@ public class Truck extends Car
 			", price=" + price +
 			'}';
 	}
+
+	@Override //ta adnotacja to jest tez informacja (w kodzie) ze metoda draw jest dziedziczona
+	public void draw( )
+	{
+		System.out.println( "drawing truck .." + x + ", " + y );
+	}
+
 }

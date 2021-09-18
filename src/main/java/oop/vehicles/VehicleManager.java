@@ -1,4 +1,4 @@
-package oop;
+package oop.vehicles;
 
 import java.util.ArrayList;
 
@@ -7,8 +7,9 @@ public class VehicleManager
 {
 	//enkapsulowany obiekt listy (struktura danych podobna do tablicy 1D (kazdy element ma swoj indeks
 	//zaczynajac od 0, 1....
+	//mozemy sie spodziewac ze na kazdym obiekcie lezacym w tej liscie (car, truck, bike)  mozna wywolac metode draw (dzieki polimorfizmowi zostanie wywolana
+	//wlasciwa implementacja metody draw
 	private ArrayList<Vehicle> vehicles = null;
-	private String[] names = new String[100];
 
 	public VehicleManager() {
 		vehicles = new ArrayList<>(  );
@@ -41,4 +42,15 @@ public class VehicleManager
 
 		return count;
 	}
+
+	public void drawAllVehicles()
+	{
+		for(Vehicle veh : vehicles)
+		{
+			veh.draw( );  //zostaje wywolana odpowiednia implementacja (w zaleznosci czy veh referuje na car, bike,...)
+		}
+	}
+
 }
+
+
