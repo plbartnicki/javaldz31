@@ -52,4 +52,20 @@ public class ListHelper
 
 		return true;
 	}
+
+	public static boolean diffValues(List<Double> list)
+	{
+		Set<Double> uniqueValues = new HashSet<>(  );
+		//dodaj do uniqueValues wszystkie wartosci z list
+		uniqueValues.addAll(list ); //można też użyć pętli
+
+		//zastanow sie nad warunkiem (if)  oraz odpowiednia relacją pomiędzy rozmiarem list oraz uniqueValues
+//		if(list.size() != uniqueValues.size()) {
+//			return true;
+//		}
+//
+//		return false;
+
+		return list.size() == uniqueValues.size();
+	}
 }

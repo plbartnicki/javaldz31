@@ -78,4 +78,20 @@ public class ListHelperTest
 		//then
 		assertFalse( result4 );
 	}
+
+	@Test
+	public void testdiffValues()
+	{
+		//given
+		List<Double> test1 = Arrays.asList( 4.0, 5.0,2.0, 7.0 );
+
+		//when, then
+		assertTrue(ListHelper.diffValues( test1 ));
+
+		//given
+		List<Double> test2 = Arrays.asList( 4.0, 5.0,2.0, 7.0, 5.0 );
+
+		//when, then
+		assertFalse(ListHelper.diffValues( test2 ));
+	}
 }
