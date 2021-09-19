@@ -2,7 +2,7 @@ package oop.logger;
 
 public class Application
 {
-	private static ConsoleLogger logger = null;
+	private static Logger logger = null;
 
 	private static void getEmployeesFromDatabase()
 	{
