@@ -1,10 +1,10 @@
-package oop.set;
+package oop.collections;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Main
+public class SetDemo
 {
 
 	public static void main( String[] args )

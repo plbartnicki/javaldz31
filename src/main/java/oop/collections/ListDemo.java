@@ -15,7 +15,7 @@ class Element<T>
 	//..
 }
 
-public class Main
+public class ListDemo
 {
 	public static void main( String[] args )
 	{
