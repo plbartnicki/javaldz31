@@ -1,5 +1,7 @@
 package oop.point;
 
+import java.util.Objects;
+
 public class Point2d //extends Object - kazda klasa domyslnie dziedziczy po klasie Object
 	//dziedziczy, to znaczy ze są "kopiowane" na skutek dziedziczenia wszystkie skladowe (metody, pola (zmienne, obiekty)) ktore nie sa private
 {
@@ -69,5 +71,21 @@ public class Point2d //extends Object - kazda klasa domyslnie dziedziczy po klas
 			"x=" + x +
 			", y=" + y +
 			')';
+	}
+
+	@Override public boolean equals( Object o )
+	{
+		if ( this == o )
+			return true;
+		if ( o == null || getClass( ) != o.getClass( ) )
+			return false;
+		Point2d point2d = ( Point2d ) o;
+		return Double.compare( point2d.x, x ) == 0 && Double
+			.compare( point2d.y, y ) == 0 && color == point2d.color;
+	}
+
+	@Override public int hashCode( )
+	{
+		return Objects.hash( x, y, color );
 	}
 }

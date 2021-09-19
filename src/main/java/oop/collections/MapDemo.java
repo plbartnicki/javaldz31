@@ -1,5 +1,8 @@
 package oop.collections;
 
+import oop.point.Color;
+import oop.point.Point2d;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,5 +31,14 @@ public class MapDemo
 //		Id id2 = new Id(1);
 //		System.out.println(id1 + " " + id2);
 //		System.out.println(id1.equals( id2 ));
+
+		//b_z10
+		Map<Integer, Point2d> points = new HashMap<>( );
+		points.put( 1, new Point2d( 2, 3, Color.RED ) );
+		points.put( 2, new Point2d( 2, 3, Color.BLUE ) );
+		points.put( 3, new Point2d( 5, 3, Color.BLUE ) );
+		points.put( 3, new Point2d( 5, 3, Color.BLUE ) );
+
+		System.out.println( points.size() );
 	}
 }
