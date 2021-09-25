@@ -3,7 +3,7 @@ package oop.lambda;
 public class CustomFunctionDemo
 {
 	private static double f(double a, double b, CustomFunction funlambda) {
-		return a*b + funlambda.fun( a, b );
+		return (a+b) * funlambda.fun( a, b );  //funlambda.fun( a, b ) oznacza wywolanie jakiejś funkcji lambda np. (a,b)->2*a+b))
 	}
 
 	public static void main( String[] args )
