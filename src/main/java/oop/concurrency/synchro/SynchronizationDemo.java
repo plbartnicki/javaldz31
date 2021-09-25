@@ -15,8 +15,8 @@ public class SynchronizationDemo
 		t2.start();
 
 		try {
-			t1.join();
-			t2.join();
+			t1.join();  //dzieki joint watek glowny musi poczekac az watek t1 zakonczy swoja prace
+			t2.join(); //dzieki joint watek glowny musi poczekac az watek t2 zakonczy swoja prace
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

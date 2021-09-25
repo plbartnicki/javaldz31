@@ -6,8 +6,9 @@ class Incrementator implements Runnable {
 	private Account account;
 	private static final Random rand = new Random();
 
+
 	public Incrementator(Account account) {
-		this.account = account;
+		this.account = account;  //kazdy obiekt tej klasy referuje na wspolny account
 	}
 
 	@Override
