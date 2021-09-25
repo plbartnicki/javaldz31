@@ -1,8 +1,6 @@
 package oop.collections;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ListHelper
 {
@@ -67,5 +65,24 @@ public class ListHelper
 //		return false;
 
 		return list.size() == uniqueValues.size();
+	}
+
+	//words = ["Kasia", "Ola", "Agnieszka" ,"Ola"]
+	//wordsCount={("Kasia", 1), ("Ola", 2), ("Agnieszka", 1)}
+	// zlozonosc czasowe O(n)
+	public static Map<String, Integer> numberOfWords( List<String> words)
+	{
+		Map<String, Integer> wordsCount = new HashMap<>();  //tutaj bedzie wynik
+		for(String w : words) {
+			if(!wordsCount.containsKey( w )) {  ///sprawdzamy czy slowo w juz wystapilo
+				wordsCount.put( w, 1 );  //jesli nie wystapilo (czyli nie zostalo jeszcze wrzucone do mapy) to dodajemy do mapy to slowo z licznikime 1
+			} else
+			{
+				Integer value = wordsCount.get( w );  //metoda get na podstawie klucza zwraca wartosc - pobieramy wartosc (value) dla slowa w
+				wordsCount.put( w, value + 1 );
+			}
+		}
+
+		return wordsCount;
 	}
 }

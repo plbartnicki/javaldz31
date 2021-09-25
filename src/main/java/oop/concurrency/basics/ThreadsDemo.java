@@ -1,4 +1,4 @@
-package oop.concurrency;
+package oop.concurrency.basics;
 
 public class ThreadsDemo
 {
@@ -30,10 +30,5 @@ public class ThreadsDemo
 		simpleTimerThread.start();
 
 		System.out.println( "this is the main thread" );
-
-		randThread.join();
-		simpleTimerThread.join();
-
-
 	}
 }

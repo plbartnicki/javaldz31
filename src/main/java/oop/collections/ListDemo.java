@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/*Dydaktyczny przyklad - klassa Element powinna byc w osobnym pliku */
 class Element<T>
 {
 	private T value;  //wartosc typu T

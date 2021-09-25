@@ -1,10 +1,7 @@
 import oop.collections.ListHelper;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -93,5 +90,18 @@ public class ListHelperTest
 
 		//when, then
 		assertFalse(ListHelper.diffValues( test2 ));
+	}
+
+	@Test
+	public void numberOfWords()
+	{
+		Map<String, Integer> result1 = ListHelper.numberOfWords(Arrays.asList(  ));
+		assertEquals(0, result1.size());
+
+		Map<String, Integer> result2 = ListHelper.numberOfWords(Arrays.asList("Asia", "Agnieszka", "Basia", "Agnieszka"  ));
+		assertEquals(3, result2.size());
+		assertEquals(new Integer(1), result2.get( "Asia" ));
+		assertEquals(new Integer(2), result2.get( "Agnieszka" ));
+		assertEquals(new Integer(1), result2.get( "Basia" ));
 	}
 }
