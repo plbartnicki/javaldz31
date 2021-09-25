@@ -104,4 +104,17 @@ public class ListHelperTest
 		assertEquals(new Integer(2), result2.get( "Agnieszka" ));
 		assertEquals(new Integer(1), result2.get( "Basia" ));
 	}
+
+	@Test
+	public void numberOfWordsUsingStreams()
+	{
+		Map<String, Long> result1 = ListHelper.numberOfWordsUsingSteams(Arrays.asList(  ));
+		assertEquals(0, result1.size());
+
+		Map<String, Long> result2 = ListHelper.numberOfWordsUsingSteams(Arrays.asList("Asia", "Agnieszka", "Basia", "Agnieszka"  ));
+		assertEquals(3, result2.size());
+		assertEquals(new Long(1), result2.get( "Asia" ));
+		assertEquals(new Long(2), result2.get( "Agnieszka" ));
+		assertEquals(new Long(1), result2.get( "Basia" ));
+	}
 }

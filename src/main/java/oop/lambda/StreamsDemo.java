@@ -54,5 +54,13 @@ public class StreamsDemo
 			.map(inv -> inv.getId())   //map jest funkcja wywolywana na strumieniu i zwracajaca kolejny strumien. map, zamienia jeden typ na drugi
 			.collect( Collectors.toList());
 		System.out.println( res1 );
+
+		//Zadanie lb_z14
+		List<Double>  res2 = invoices.stream()
+			.filter( inv -> inv.getCompanyName().equals( "Abc" ) ||  inv.getNettoValue() > 5000)
+			.map(inv -> inv.getNettoValue())   //map jest funkcja wywolywana na strumieniu i zwracajaca kolejny strumien. map, zamienia jeden typ na drugi\
+			.collect( Collectors.toList());
+		System.out.println( res2 );
+
 	}
 }
